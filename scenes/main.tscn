@@ -1,0 +1,108 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4rualj074pcn"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_oxf10"]
+
+[node name="main" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oxf10")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -153.5
+offset_right = 153.5
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Gambling Simulator"
+
+[node name="info" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.364149
+anchor_top = 0.361111
+anchor_right = 0.644531
+anchor_bottom = 0.430556
+offset_left = 141.5
+offset_top = 11.0
+offset_right = -141.5
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Hello! Heads or tails?"
+metadata/_edit_use_anchors_ = true
+
+[node name="heads" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.364583
+anchor_top = 0.513889
+anchor_right = 0.455729
+anchor_bottom = 0.595679
+offset_bottom = 3.05176e-05
+theme_override_font_sizes/font_size = 32
+text = "Heads"
+metadata/_edit_use_anchors_ = true
+
+[node name="tails" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.568576
+anchor_top = 0.513889
+anchor_right = 0.636285
+anchor_bottom = 0.595679
+offset_bottom = 3.05176e-05
+theme_override_font_sizes/font_size = 32
+text = "Tails"
+metadata/_edit_use_anchors_ = true
+
+[node name="money" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -122.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Balance: $100"
+
+[node name="betting" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472222
+anchor_top = 0.524691
+anchor_right = 0.544325
+anchor_bottom = 0.572531
+grow_horizontal = 2
+grow_vertical = 2
+rounded = true
+allow_greater = true
+metadata/_edit_use_anchors_ = true
+
+[node name="confirm" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.447049
+anchor_top = 0.625
+anchor_right = 0.5625
+anchor_bottom = 0.70679
+offset_bottom = -3.05176e-05
+theme_override_font_sizes/font_size = 32
+text = "Confirm"
+metadata/_edit_use_anchors_ = true
+
+[node name="streak" type="Label" parent="."]
+layout_mode = 1
+offset_right = 135.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "Streak: 0"
+
+[connection signal="pressed" from="heads" to="." method="_on_heads_pressed"]
+[connection signal="pressed" from="tails" to="." method="_on_tails_pressed"]
+[connection signal="pressed" from="confirm" to="." method="_on_confirm_pressed"]
